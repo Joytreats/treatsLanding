@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My landing page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="background">
+      <div class="overlay"></div>
+
+      <!-- Navigation Structure -->
+      <header>
+        <div class="head">
+          <h1 class="logo">Joy's Treats</h1>
+          <ul class="list">
+            <li id="button">HOME</li>
+            <li id="button">ABOUT</li>
+            <li id="button">MENU</li>
+            <li id="button">PAGE</li>
+            <li id="button">CONTACT</li>
+          </ul>
+          <button id="signupBtn">SIGN UP</button>
+        </div>
+      </header>
+
+      <!-- Cards content container -->
+      <section class="card">
+        <div class="card1">
+          <h1>Order Our Delicious Meal</h1>
+          <p>
+            Our menu features delicious meals and treats made with fresh
+            ingredients. Order now and let us deliver happiness to your doorstep
+          </p>
+
+          <button class="button">ORDER A MEAL</button>
+        </div>
+        <div class="card1">
+          <h1>Book Us For All Occasions</h1>
+          <p>
+            Are you hosting a party, planning a special dinner, or simply want a
+            healthy snacks? Our fresh food is sure to impress.
+          </p>
+
+          <button class="button">BOOK US TODAY</button>
+        </div>
+        <div class="card1">
+          <h1>Our Latest News</h1>
+          <p>
+            We are excited to announce our latest updates! Our team has been
+            working hard to bring you the best experience possible.
+          </p>
+          <button class="button">VISIT OUR BLOG</button>
+        </div>
+      </section>
+
+      <!-- Customer Review Section -->
+      <h3>Customers Review</h3>
+      <section class="feedback">
+        <div class="review">
+          <img src="./assets/damilola.jpeg" />
+          <div class="content">
+            <h4>Damilola Ezekiel</h4>
+            <p>
+              I am absolutely obsessed with Joy's Treats! The customer service
+              is top-notch and the delivery was prompt.
+            </p>
+          </div>
+        </div>
+        <div class="review">
+          <img src="./assets/esther.jpg" />
+          <div class="content">
+            <h4>Uaifo Blessing</h4>
+            <p>
+              I was blown away by the variety of options at Joy's Treats. The
+              meals were a hit at my party and evryone loved them.
+            </p>
+          </div>
+        </div>
+        <div class="review">
+          <img src="./assets/bless.jpg" />
+          <div class="content">
+            <h4>Esther Okeke</h4>
+            <p>
+              I ordered a meal from Joy's Treats. The packaging was adorable and
+              the prices were very affordable.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="signupModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <form id="signupForm">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            autocomplete="off"
+            name="password"
+            required
+          />
+
+          <label for="referral">How did you hear about us?</label>
+          <select id="referral" name="referral" required>
+            <option value="">Select an option</option>
+            <option value="friend">Friend</option>
+            <option value="social_media">Social Media</option>
+            <option value="advertisement">Advertisement</option>
+            <option value="other">Other</option>
+          </select>
+
+          <button type="submit">Sign Up</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer Structure -->
+    <footer><p>&copy; Joy's Treats, &nbsp;2024.</p></footer>
+
+    <!-- Javascript Functionalities -->
+    <script>
+      document.addEventListener("DOMContentLoaded", (event) => {
+        const modal = document.getElementById("signupModal");
+        const btn = document.getElementById("signupBtn");
+        const span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function () {
+          modal.style.display = "block";
+        };
+
+        span.onclick = function () {
+          modal.style.display = "none";
+        };
+
+        // For clicking the modal overlay to close modal, we do not want it at this time
+        // window.onclick = function (event) {
+        //   if (event.target == modal) {
+        //     modal.style.display = "none";
+        //   }
+        // };
+
+        const form = document.getElementById("signupForm");
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+          alert("Yuppie!!!, Your response has been submitted successfully.");
+          modal.style.display = "none";
+        });
+      });
+    </script>
+  </body>
+</html>
